@@ -1,0 +1,73 @@
+body{
+    margin: 0%;padding: 0%;
+    background-image: url(../image/bg5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+form{
+    color: rgb(0, 2, 4);
+}
+.sign-up-text:hover{
+    color: blue;
+}
+
+.sign-up-text a{
+    color: rgb(98, 63, 202);
+}
+
+.adminlogin{
+    width: 450px;
+    font-size: 20px;
+    color: aliceblue;
+    height: 500px;
+    padding: 30px;
+   margin-left: 30px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(2, 10, 0, 0.668);
+}
+.adminlogin h1{
+    font: optional;
+}
+.adminlogin:hover{
+    background-color: rgba(167, 232, 139, 0.624);
+    
+}
+.inputbox{
+    padding: 10px;
+    width: 250px;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.inputbox1{
+    padding: 10px;
+    width: 250px;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.inputbutton input{
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 20px;
+    color: rgb(28, 3, 3);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: rgb(101, 101, 234);
+}
+.homeback a{
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 30px;
+   width: 100px;
+    color: rgba(16, 10, 10, 0.786);
+}

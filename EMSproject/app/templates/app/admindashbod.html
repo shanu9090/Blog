@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/insert.css' %}">
+	
+</head>
+<body>
+
+<div>
+
+	<form class="admindash" method="POST" action="{% url 'displayrecord' %}">
+		{% csrf_token %}
+	<h1>Admin DashBoard</h1>
+	<br>
+	<button>Show All Quieries</button> <br>
+	<br>
+	<br>
+
+	<button><a href="{% url 'adminreg' %}"> logout</a></button>
+	
+	
+
+
+
+	</form>
+</div>
+
+
+</body>
+</html>

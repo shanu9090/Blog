@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/display.css' %}">
+	
+</head>
+<body>
+  <div>
+    <button id="homeback"> <a href={% url 'homepage' %}>Back</a></button>
+	<h1 >Student Record Display</h1>
+    <table border=1px solid black width="800px" >
+<tr>
+     <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email-Id</th>
+    <th>Contact-Number</th>
+    <th>Queries</th>
+    <th>Update</th>
+    <th>Delete</th>
+</tr>
+
+{% if key1 %}
+<tbody>
+    {% for i in key1 %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.Fname}}</td>
+        <td>{{i.Lname}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Contact}}</td>
+        <td>{{i.Quiry}}</td> 
+        <td>
+            <form action="{% url 'updatepage' pk=i.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="update">
+              </form>
+        </td>
+        <td>
+            <form action="{% url 'deletepage' pk=i.id %}" method="post" name="Deleteform">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+              </form>
+        </td>
+        </tr>
+     {% endfor %}   
+</tbody>  
+{% endif %}
+    </table>
+
+</div>
+</body>
+</html>

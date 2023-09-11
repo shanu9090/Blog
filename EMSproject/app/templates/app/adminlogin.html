@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/adminnlogin.css' %}">
+	
+</head>
+<body>
+  <button class="homeback"><a href="{% url 'homepage' %}">Back</a></button>
+	<form action="{% url 'adminlogininsert' %}" method="POST" >
+    {% csrf_token %}
+    
+        <div class="adminlogin">
+          <h1 >Admin Loginpage</h1>
+          <p style="color:red">{{msg}}</p>  
+          <div class="input_box">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Enter your email" name="email" class="inputbox" required>
+          </div>
+          <div class="input_box">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Enter your password" name="password" class="inputbox1" required>
+          </div>
+          <div class="inputbutton">
+            <input type="submit" value="Login">
+          </div>
+          <div class=" sign-up-text">Don't have an account? <a href="{% url 'adminreg' %}">Sigup now</a></div>
+        </div>
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/insert.css' %}">
+	
+</head>
+<body>
+<form method="POST" action="{% url 'quiryinsert' %}">
+    {% csrf_token %}
+	<div class="wrapper rounded bg-white">
+ <h2 style="color:blue">{{msg}}</h2>
+        <div class="h3">Student Query Form</div>
+
+        <div class="form">
+            <div class="row">
+                <div class="text">
+                    <label>First Name</label>
+                    <input type="text" class="form-control"name="fname" required>
+                </div>
+                <div class="text">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lname" required>
+                </div>
+            </div>
+            {% comment %} <div class="row"> {% endcomment %}
+                {% comment %} <div class="text"> {% endcomment %}
+                    {% comment %} <label>Gender</label> {% endcomment %}
+                    {% comment %} <div class="d-flex align-items-center mt-2"> {% endcomment %}
+                        {% comment %} <label class="option"> {% endcomment %}
+                            {% comment %} <input type="radio" name="radio">Male {% endcomment %}
+                            {% comment %} <span class="checkmark"></span> {% endcomment %}
+                        {% comment %} </label> {% endcomment %}
+                        {% comment %} <label class="option "> {% endcomment %}
+                            {% comment %} <input type="radio" name="radio">Female {% endcomment %}
+                            {% comment %} <span class="checkmark"></span> {% endcomment %}
+                        {% comment %} </label> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+            <div class="row">
+                <div class="text">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="text">
+                    <label>Phone Number</label>
+                    <input type="tel" class="form-control" name="phone" required>
+                </div>
+            </div>
+            <div class=" text">
+                <label>Queries</label>
+
+                <textarea name="enquiry" width="400px" height="300px" class="form-control" required>
+
+                </textarea>
+
+
+            </div>
+            <button class="btn-text">Submit</button>
+            <button class="homeback"><a href="{% url 'homepage' %}" >Back</a></button>
+        </div>
+
+    </div>
+</form>
+
+</body>
+</html>

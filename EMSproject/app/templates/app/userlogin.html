@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/userlogin.css' %}">
+	
+</head>
+<body>
+ 
+
+	<form action="{% url 'userlogininsert' %}" method="POST" >
+    {% csrf_token %}
+    <button class="homeback"><a href="{% url 'homepage' %}">Back</a></button>
+
+        <div class="adminlogin">
+          <h1>User loginpage</h1>
+          <p style="color:red">{{msg1}}</p>
+          <div class="input_box">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Enter your email" name="email" class="inputbox" required>
+          </div>
+          <div class="input_box">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Enter your password" name="password" class="inputbox" required>
+          </div>
+          <div class="inputbutton">
+            <input type="submit" value="Login">
+          </div>
+          <div class=" sign-up-text">Don't have an account? <a href="{% url 'userreg' %}">Sigup now</a></div>
+        </div>
+        
+    </form>
+    
+
+</body>
+</html>
